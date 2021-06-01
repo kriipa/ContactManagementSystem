@@ -106,6 +106,20 @@ def displayForm():
     tree.pack()
     DisplayData()
 
+def Reset():
+    # clear current data from table
+    tree.delete(*tree.get_children())
+    # refresh table data
+    DisplayData()
+    # clear search text
+    SEARCH.set("")
+    fname.set("")
+    lname.set("")
+    gender.set("")
+    address.set("")
+    contact.set("")
+
+
 
 # calling function
 displayForm()
