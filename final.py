@@ -119,8 +119,21 @@ def Reset():
     address.set("")
     contact.set("")
 
+def OnDoubleClick(self):
+    # getting focused item from treeview
+    curItem = tree.focus()
+    contents = (tree.item(curItem))
+    selecteditem = contents['values']
+    # set values in the fields
+    fname.set(selecteditem[1])
+    lname.set(selecteditem[2])
+    gender.set(selecteditem[3])
+    address.set(selecteditem[4])
+    contact.set(selecteditem[5])
 
 
 # calling function
 displayForm()
-mainloop()
+if __name__ == '__main__':
+    # Running Application
+    mainloop()
